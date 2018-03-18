@@ -1,0 +1,32 @@
+{
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "apollo-boost": "0.1.1",
+        "graphql": "0.13.0",
+        "install": "^0.10.4",
+        "react": "^16.2.0",
+        "react-apollo": "2.0.4",
+        "react-dom": "^16.2.0",
+        "react-scripts-ts": "2.14.0"
+    },
+    "scripts": {
+        "start": "react-scripts-ts start",
+        "build": "react-scripts-ts build",
+        "test": "react-scripts-ts test --env=jsdom",
+        "eject": "react-scripts-ts eject",
+        "get-schema": "graphql get-schema",
+        "get-schema-type": "gql-gen --file schema.json --template typescript --out ./typings/graphql.ts"
+    },
+    "devDependencies": {
+        "@types/graphql": "^0.12.5",
+        "@types/jest": "^22.2.0",
+        "@types/node": "^9.4.7",
+        "@types/react": "^16.0.40",
+        "@types/react-dom": "^16.0.4",
+        "graphql-cli": "^2.15.8",
+        "graphql-code-generator": "^0.8.21",
+        "typescript": "^2.7.2"
+    }
+}
