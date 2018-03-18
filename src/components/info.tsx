@@ -1,41 +1,28 @@
 import * as React from "react";
+import { User } from "api/graphql";
 
 export type InfoType = {
-    stars: number;
-    projects: number;
-    commits: number;
-    followers: number;
+    user: User;
 };
 
 class Info extends React.Component<InfoType> {
     render() {
         return (
-            <nav className="level">
-                <div className="level-item has-text-centered">
-                    <div>
-                        <p className="heading">Stars</p>
-                        <p className="title">{this.props.stars}</p>
-                    </div>
+            <div className="card">
+                <div className="card-content">
+                    <article className="media">
+                        <p className="media-left image is-128x128">
+                            <img src={this.props.user.avatarUrl} />
+                        </p>
+                        <div className="media-content">
+                            <div className="content">
+                                <h1 className="title">{this.props.user.name}</h1>
+                                <p>{this.props.user.bio}</p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div className="level-item has-text-centered">
-                    <div>
-                        <p className="heading">Projects</p>
-                        <p className="title">{this.props.projects}</p>
-                    </div>
-                </div>
-                <div className="level-item has-text-centered">
-                    <div>
-                        <p className="heading">Followers</p>
-                        <p className="title">{this.props.followers}</p>
-                    </div>
-                </div>
-                <div className="level-item has-text-centered">
-                    <div>
-                        <p className="heading">Commits</p>
-                        <p className="title">{this.props.commits}</p>
-                    </div>
-                </div>
-            </nav>
+            </div>
         );
     }
 }
